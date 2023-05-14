@@ -2,7 +2,7 @@ const { spec, request } = require("pactum");
 
 const baseUrl = "https://jsonplaceholder.typicode.com";
 
-const getPostsSchema = require('../data/response/get-comments-response-schema.json');
+const getCommentsSchema = require('../data/response/get-comments-schema.json');
 
 describe("Get all comment endpoint test suite", () => {
   before(() => {
@@ -15,7 +15,7 @@ describe("Get all comment endpoint test suite", () => {
       .expectStatus(200)
       .expectResponseTime(3000)
       .expectBodyContains('id labore ex et quam laborum')
-      .expectJsonSchema(getPostsSchema);
+      .expectJsonSchema(getCommentsSchema);
   });
 
   it("Get all comments with filter id", async () => {
@@ -24,6 +24,6 @@ describe("Get all comment endpoint test suite", () => {
       .expectStatus(200)
       .expectResponseTime(3000)
       .expectBodyContains('id labore ex et quam laborum')
-      .expectJsonSchema(getPostsSchema);
+      .expectJsonSchema(getCommentsSchema);
   });
 });
