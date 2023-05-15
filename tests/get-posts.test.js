@@ -19,8 +19,11 @@ describe("Get all posts endpoint test suite", () => {
   });
 
   it("Get post with filter id", async () => {
+
+    const postId = 1;
+
     await spec()
-      .get(`${baseUrl}/posts/1`)
+      .get(`${baseUrl}/posts/${postId}`)
       .expectStatus(200)
       .expectResponseTime(3000)
       .expectBodyContains('recusandae');
