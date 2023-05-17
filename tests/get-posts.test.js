@@ -28,4 +28,10 @@ describe("Get all posts endpoint test suite", () => {
       .expectResponseTime(3000)
       .expectBodyContains('recusandae');
   });
+
+  it("Try to get single post negative test with unmatched URL", async () => {
+    await spec()
+    .get(`${baseUrl}/api/posts/2ssss`)
+    .expectStatus(404);
+  });
 });

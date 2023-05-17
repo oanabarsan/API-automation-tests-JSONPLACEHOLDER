@@ -26,4 +26,10 @@ describe("Get all comment endpoint test suite", () => {
       .expectBodyContains('id labore ex et quam laborum')
       .expectJsonSchema(getCommentsSchema);
   });
+
+  it("Try to gry single comment negative test with unmatched URL", async () => {
+    await spec()
+    .get(`${baseUrl}/api/comments?id=sssss`)
+    .expectStatus(404);
+  });
 });
