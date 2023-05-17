@@ -8,7 +8,6 @@ describe("Delete post endpoint test suites ", () => {
   });
 
   it("Delete existing post", async () => {
-
     const postId = 1;
 
     await spec()
@@ -16,10 +15,13 @@ describe("Delete post endpoint test suites ", () => {
       .expectStatus(200) //204
       .expectResponseTime(3000);
 
+    await spec().get(`${baseUrl}/posts/${postId}`).expectStatus(200); // 404 (for validating the previous test);
 
+    it("Try to delete nonexisting post", async () => {
       await spec()
-      .get(`${baseUrl}/posts/${postId}`)
-      .expectStatus(200) // 404 (for validating the previous test)
-
+        .delete(`${baseUrl}/posts/sssss`)
+        .expectStatus(404)
+        .expectResponseTime(3000);
+    });
   });
 });
