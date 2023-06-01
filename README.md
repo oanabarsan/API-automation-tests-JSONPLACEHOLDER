@@ -2,7 +2,7 @@
 Automation tests for fake api from https://jsonplaceholder.typicode.com/
 <span align="center">
   
-![alt text]([https://pactumjs.github.io/introduction/welcome.html](https://avatars.githubusercontent.com/u/76616193?s=280&v=4))
+![alt text](https://miro.medium.com/v2/resize:fit:801/1*aJdheJaQbj6WhFYCfzQsjQ.png)
 
   <br/>
 
